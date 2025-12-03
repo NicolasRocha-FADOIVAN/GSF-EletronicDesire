@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    gap: 10px;
+    background-color: #353535;
+    color: #fff;
+}
+
+.menu-icon {
+    font-size: 30px;
+    margin-left: 50px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.menu-icon:hover {
+    transform: scale(1.1);
+}
+
+.header-logo img {
+    max-height: 50px;
+    flex: 1;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    margin-left: 500px;
+    cursor: pointer;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    margin: 0 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.search-bar button:hover {
+    transform: scale(1.2);
+}
+
+.user-options {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-button{
+    margin-right: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-family: sans-serif;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.user-options a:hover {
+    transform: scale(1.05);
+    color: #ff6600;
+}
+
+.icons img {
+    width: 30px;
+    cursor: pointer;
+}
