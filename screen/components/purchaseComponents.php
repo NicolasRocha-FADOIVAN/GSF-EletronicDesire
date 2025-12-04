@@ -1,28 +1,4 @@
-<?php 
-
-function products($product_name, $product_price, $product_image) {
-
-    $pix_price = number_format($product_price - $product_price/25, 2, ',', '.');
-    $product_price = number_format($product_price, 2, ',', '.');
-
-    $element="
-
-        <div class='product-box'>
-            <div class='product-info'>
-                <img src=$product_image
-                    alt='imagem do produto' />
-                <div>
-                    <h3>$product_name</h3>
-                    <p>Com desconto no PIX: <strong>R$ $pix_price</strong></p>
-                    <p>Parcelado sem juros: R$ $product_price</p>
-                </div>
-            </div>
-        </div>
-    ";
-
-    echo $element;
-
-}
+<?php
 
 function orderSummary($total_price, $discounts, $final_price) {
 
@@ -31,7 +7,7 @@ function orderSummary($total_price, $discounts, $final_price) {
     $final_price = number_format($final_price, 2, ',', '.');
 
     $element="
-    
+
         <aside class='order-summary'>
             <div class='summary-box'>
                 <div class='summary-header'>
@@ -54,7 +30,7 @@ function orderSummary($total_price, $discounts, $final_price) {
                     </div>
                     <div class='total-price'>R$ $final_price</div>
                 </div>
-                <button name='continue' class='btn btn-primary' type='submit'>CONTINUAR</button>
+                <button name='finish' class='btn btn-primary' type='submit'>CONTINUAR</button>
                 <button name='voltar' class='btn btn-outline' type='submit'>VOLTAR</button>
             </div>
         </aside>

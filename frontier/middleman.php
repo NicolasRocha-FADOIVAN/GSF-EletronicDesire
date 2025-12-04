@@ -3,6 +3,9 @@
 include 'gate/clienteGate.php';
 include 'gate/produtoGate.php';
 include 'gate/carrinhoGate.php';
+include 'gate/enderecoGate.php';
+include 'gate/comprasGate.php';
+include 'gate/favoritoGate.php';
 
 #USADO PARA FUNÇÕES CREATE
 function implodeArray($conn, $data, $functionModel) {
@@ -66,5 +69,11 @@ function implodeConValues($conn, $dataValues, $dataConditions, $functionModel) {
 function pass($conn, $functionModel) {
 
     return $functionModel($conn);
+
+}
+
+function passData($conn, $data, $functionModel) {
+
+    return $functionModel($conn, $data);
 
 }

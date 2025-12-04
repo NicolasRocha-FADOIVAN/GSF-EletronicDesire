@@ -121,6 +121,8 @@ body {
 
 .heart {
   color: #ff6600;
+  background-color: #fff;
+  border: none;
   font-size: 1.8em;
   margin-left: 20px;
   cursor: pointer;

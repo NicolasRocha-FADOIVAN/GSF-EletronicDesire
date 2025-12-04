@@ -1,9 +1,8 @@
 <?php 
 
-function product($product_name, $product_description, $product_price, $product_image) {
+function product($product_id, $product_name, $product_description, $product_price, $product_image) {
 
     $price_10x = number_format($product_price/10, 2, ',', '.');
-    $prime_price = number_format($product_price - $product_price/8.8, 2, ',', '.');
     $product_price = number_format($product_price, 2, ',', '.');
 
     $element="
@@ -30,15 +29,11 @@ function product($product_name, $product_description, $product_price, $product_i
                     <p class='parcelamento'><b>ou em até 10x de R$ $price_10x</b></p>
 
                     <form method='POST'>
-                        <button class='botao-prime'>ASSINE PRIME EDG E PAGUE $prime_price</button>
+                        <button class='botao-prime' type='submit' name='addFavorites'>ADICIONE AOS FAVORITOS</button>
                         <button class='botao-comprar'>COMPRAR AGORA</button>
-                        <button class='botao-carrinho' type='submit' name='addCart'>ADICIONAR AO CARRINHO</button>
+                        <button class='botao-carrinho' type='submit' name='addCart' value='$product_id'>ADICIONAR AO CARRINHO</button>
                     </form>
                     
-                    <div class='cep-container'>
-                        <input type='text' placeholder='Inserir CEP'>
-                        <button>OK</button>
-                    </div>
                 </div>
             </div>
         </div>

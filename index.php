@@ -41,6 +41,14 @@ switch ($route) {
         require 'screen/favorites.php';
     break;
 
+    case 'purchase':
+        require 'screen/purchase.php';
+    break;
+
+    case 'address':
+        require 'screen/address.php';
+    break;
+
     case 'checkout':
         require 'screen/checkout.php';
     break;

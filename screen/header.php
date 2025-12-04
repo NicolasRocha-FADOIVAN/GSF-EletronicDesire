@@ -7,11 +7,11 @@ include_once 'components/headerComponents.php';
 
 ?>
 
-<link rel="stylesheet" href="./screen/css/header.css">
+<link rel="stylesheet" href="./screen/css/headera.css">
 <header>
     <div class="menu-icon">☰</div>
     <div class="header-logo">
-        <img src="./screen/assets/EDG.png" alt="Logo Electronic Desire Gaming" />
+        <a href="index.php?route=home"><img src="./screen/assets/EDG.png" alt="Logo Electronic Desire Gaming" /></a>
     </div>
     <form class="search-bar" method="POST">
         <input type="text" name="searchBar" placeholder="Busque seus produtos aqui!" />

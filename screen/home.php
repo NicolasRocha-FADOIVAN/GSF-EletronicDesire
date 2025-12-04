@@ -45,7 +45,7 @@ include_once 'screen/components/homeComponents.php';
     
         <div class="marcas-cards-wrapper">
            <div class="marcas-cards-container">
-                <button class="seta esquerda" onclick="mover(-1)"> &#8249;</button>
+                <button class="seta esquerda" onclick="mover(1)"> &#8249;</button>
                 <div class="marcas-contant" id="carrossel">
                     <div class="card banner-1"><img src="./screen/assets/marcas-recomendadas/logitech-logo.jpg" class="marcas-image" alt="Banner Marca 1" /></div>
                     <div class="card banner-2"><img src="./screen/assets/marcas-recomendadas/hyperx-logo.jpg" class="marcas-image" alt="Banner Marca 2" /></div>
@@ -55,7 +55,7 @@ include_once 'screen/components/homeComponents.php';
                     <div class="card banner-6"><img src="./screen/assets/marcas-recomendadas/kingston-logo.jpg" class="marcas-image" alt="Banner Marca 6" /></div>
                     <div class="card banner-7"><img src="./screen/assets/marcas-recomendadas/logitech-logo.jpg" class="marcas-image" alt="Banner Marca 7" /></div>
                 </div>
-                <button class="seta direita" onclick="mover(1)">&#8250;</button>
+                <button class="seta direita" onclick="mover(-1)">&#8250;</button>
            </div>
         </div>
 

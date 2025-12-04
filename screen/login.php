@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - EDG</title>
-  <link rel="stylesheet" href="./screen/css/login-style.css">
+  <link rel="stylesheet" href="./screen/css/login-sty.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -34,6 +34,8 @@
           <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo">
           Entrar com o Google
         </button>
+
+        <p class="signup-link">Não tem uma conta? <a href="index.php?route=register">Cadastre-se</a></p>
 
       </form>
     </div>

@@ -1,6 +1,8 @@
 <?php
 
 include_once 'frontier/productFrontier.php';
+include_once 'frontier/cartFrontier.php';
+include_once 'frontier/FavoritesFrontier.php';
 include_once 'screen/components/productComponents.php';
 
 ?>
@@ -18,7 +20,7 @@ include_once 'screen/components/productComponents.php';
     <div class="container">
 
         <?php foreach(productDetails($conn, $_GET['idproduto']) as $list):  ?>
-        <?php product($list[1], $list[2],$list[3], $list[4]) ?>
+        <?php product($list[0], $list[1], $list[2],$list[3], $list[4]) ?>
         <?php endforeach ?>
 
         <div class="titulo-produtos-container">

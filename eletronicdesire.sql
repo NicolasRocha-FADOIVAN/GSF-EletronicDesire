@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 03, 2025 at 12:49 AM
+-- Generation Time: Dec 04, 2025 at 03:53 AM
 -- Server version: 9.1.0
 -- PHP Version: 8.4.0
 
@@ -30,18 +30,32 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `carrinhos`;
 CREATE TABLE IF NOT EXISTS `carrinhos` (
   `id_cliente` int NOT NULL,
-  `produtos_carrinho` json DEFAULT NULL,
-  `valor_total` float NOT NULL
+  `produtos_carrinho` json DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `carrinhos`
 --
 
-INSERT INTO `carrinhos` (`id_cliente`, `produtos_carrinho`, `valor_total`) VALUES
-(2, '[\"6\", \"4\", \"4\", \"2\", \"2\", \"2\", \"2\"]', 0),
-(11, NULL, 0),
-(12, '[\"1\", \"11\", \"12\", \"13\", \"14\"]', 0);
+INSERT INTO `carrinhos` (`id_cliente`, `produtos_carrinho`) VALUES
+(2, '[\"6\", \"4\", \"4\", \"2\", \"2\", \"2\", \"2\"]'),
+(11, NULL),
+(12, '[]'),
+(12, '[]'),
+(12, '[]'),
+(12, '[]'),
+(12, '[]'),
+(12, '[]'),
+(12, '[]'),
+(12, '[]'),
+(12, '[]'),
+(12, '[]'),
+(12, '[]'),
+(12, '[]'),
+(12, '[]'),
+(12, '[]'),
+(12, '[]'),
+(13, NULL);
 
 -- --------------------------------------------------------
 
@@ -58,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `clientes` (
   `email_cliente` varchar(255) NOT NULL,
   `senha_cliente` varchar(80) NOT NULL,
   PRIMARY KEY (`id_cliente`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `clientes`
@@ -68,7 +82,92 @@ INSERT INTO `clientes` (`id_cliente`, `nome_cliente`, `sobrenome_cliente`, `cpf_
 (4, 'João', 'da Silva', 2147483647, 'silva.joao@gmail.com', '1234'),
 (12, 'sick', 'horas', 111111111, 'a@a', '123'),
 (10, 'fnaf', 'fnaf', 1111, 'ass@gay.cum', 'saf'),
-(11, 'Hudson', 'Hudson', 69696969696, 'hudson.bryan@gay.molestador', 'saf');
+(11, 'Hudson', 'Hudson', 69696969696, 'hudson.bryan@gay.molestador', 'saf'),
+(13, 'sick', 'sick', 1111, 'a@a', 'gay');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `compras`
+--
+
+DROP TABLE IF EXISTS `compras`;
+CREATE TABLE IF NOT EXISTS `compras` (
+  `id_cliente` int DEFAULT NULL,
+  `produtos_compra` json DEFAULT NULL,
+  `id_endereco` int DEFAULT NULL,
+  `preco_compra` decimal(10,2) DEFAULT NULL,
+  `met_pagamento` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `id_compra` int NOT NULL AUTO_INCREMENT,
+  `status_compra` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id_compra`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `compras`
+--
+
+INSERT INTO `compras` (`id_cliente`, `produtos_compra`, `id_endereco`, `preco_compra`, `met_pagamento`, `id_compra`, `status_compra`) VALUES
+(12, '[\"1\", \"11\", \"12\", \"13\", \"14\"]', 20, 7015.45, 'nupay', 1, 1),
+(12, '[\"1\", \"11\", \"12\", \"13\", \"14\"]', 20, 7015.45, 'nupay', 2, 1),
+(12, '[\"1\", \"11\", \"12\", \"13\", \"14\"]', 21, 7015.45, 'credit', 3, 1),
+(12, '[\"1\", \"11\", \"12\", \"13\", \"14\"]', 22, 7015.45, 'pix', 4, 1),
+(12, '[\"12\", \"12\"]', 23, 935.82, 'nupay', 5, 1),
+(13, '[\"13\", \"12\", \"14\"]', 25, 2527.09, 'credit', 8, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `enderecos`
+--
+
+DROP TABLE IF EXISTS `enderecos`;
+CREATE TABLE IF NOT EXISTS `enderecos` (
+  `cep` varchar(9) NOT NULL,
+  `endereco` varchar(255) NOT NULL,
+  `bairro` varchar(150) NOT NULL,
+  `cidade` varchar(150) NOT NULL,
+  `estado` char(2) NOT NULL,
+  `numero_endereco` int DEFAULT NULL,
+  `complemento_endereco` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `pontodereferencia_endereco` varchar(255) NOT NULL,
+  `id_endereco` int NOT NULL AUTO_INCREMENT,
+  `id_cliente` int NOT NULL,
+  PRIMARY KEY (`id_endereco`)
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `enderecos`
+--
+
+INSERT INTO `enderecos` (`cep`, `endereco`, `bairro`, `cidade`, `estado`, `numero_endereco`, `complemento_endereco`, `pontodereferencia_endereco`, `id_endereco`, `id_cliente`) VALUES
+('999999999', 'sick gay', 'ass', 'do', 'sk', 12323, '3323', '123322', 18, 12),
+('999999999', 'sick gyad', 'safado', 'hudson', '41', 23232323, 'sei lá', 'meu pau', 20, 12),
+('999999999', 'sick gay', 'ass', 'do', 'sk', 12323, 'sei lá', '123322', 21, 12),
+('999999999', 'sick gyad', 'ass', 'hudson', 'mt', 12323, 'sei lá', 'meu pau', 22, 12),
+('ass', 'do', 'siyt', 'hudson', 'mt', 12323, 'sei lá', 'meu pau', 23, 12),
+('ass', 'sick gay', 'safado', '4106902', 'sk', 12323, 'sei lá', '123322', 24, 12),
+('999999999', 'rua dos viados', 'bacacheri', 'curitiba', 'pr', 23232323, '3323', 'meu pau', 25, 13);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `favoritos`
+--
+
+DROP TABLE IF EXISTS `favoritos`;
+CREATE TABLE IF NOT EXISTS `favoritos` (
+  `id_cliente` int NOT NULL,
+  `produtos_favoritos` json NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `favoritos`
+--
+
+INSERT INTO `favoritos` (`id_cliente`, `produtos_favoritos`) VALUES
+(12, '[]'),
+(13, '[\"13\"]');
 
 -- --------------------------------------------------------
 
